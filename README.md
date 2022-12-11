@@ -1,14 +1,14 @@
 # jar-chat-app-aws-s3-mongo-multer
 
 
-# 🚀 YYYYYYYYYYYYYYYYYYY 🚀
+# 🚀 JAR is chatting web app that lets you connect to people around the world. You can create rooms and chat with anyone around the globe. 🚀
 
 https://github.com/coding-to-music/jar-chat-app-aws-s3-mongo-multer
 
 https://jar-chat-app-aws-s3-mongo-multer.vercel.app
 
 
-From / By 
+From / By https://github.com/Creatoon/Jar-web-app
 
 ## Environment variables:
 
