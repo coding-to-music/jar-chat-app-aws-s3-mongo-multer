@@ -1,3 +1,32 @@
+# jar-chat-app-aws-s3-mongo-multer
+
+
+# 🚀 YYYYYYYYYYYYYYYYYYY 🚀
+
+https://github.com/coding-to-music/jar-chat-app-aws-s3-mongo-multer
+
+https://jar-chat-app-aws-s3-mongo-multer.vercel.app
+
+
+From / By 
+
+## Environment variables:
+
+```java
+```
+
+## GitHub
+
+```java
+git init
+git add .
+git remote remove origin
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:coding-to-music/jar-chat-app-aws-s3-mongo-multer.git
+git push -u origin main
+```
+
 <div align="center">
     <a href="https://github.com/Creatoon/Jaar-Chat-WebApp">
         <img width="200" height="200" src="https://i.ibb.co/jzR1d33/github-logo.jpg">

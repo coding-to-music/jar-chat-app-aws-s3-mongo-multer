@@ -1,5 +1,5 @@
 {
-  "name": "chatty",
+  "name": "jar-chat-app-aws-s3-mongo-multer",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,6 +8,7 @@
     "dev": "nodemon server.js",
     "start:prod": "SET NODE_ENV=production && nodemon server.js ",
     "debug": "ndb server.js",
+    "deploy": "git add . && git commit -m Build && git push",
     "watch:js": "parcel watch ./public/js/development/index.js --out-dir ./public/js/production --out-file bundle.js",
     "build:js": "parcel build ./public/js/development/index.js --out-dir ./public/js/production --out-file bundle.js"
   },
