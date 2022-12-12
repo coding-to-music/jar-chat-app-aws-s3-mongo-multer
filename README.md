@@ -1,5 +1,7 @@
 # jar-chat-app-aws-s3-mongo-multer
 
+- Getting Access Denied trying to save image to AWS S3. Interesting UI. Does not work on Vercel. JAR is chatting web app that lets you connect to people around the world. You can create rooms and chat with anyone around the globe.
+
 # 🚀 JAR is chatting web app that lets you connect to people around the world. You can create rooms and chat with anyone around the globe. 🚀
 
 https://github.com/coding-to-music/jar-chat-app-aws-s3-mongo-multer
