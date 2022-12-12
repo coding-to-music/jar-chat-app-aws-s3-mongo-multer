@@ -7,26 +7,17 @@ process.on('uncaughtException', (err) => {
   process.exit(1);
 });
 
-// ADDING OUR CONFIG FILE
-// dotenv.config({ path: './config.env' });
 dotenv.config();
 
 const socket = require('socket.io');
 const app = require('./app');
 const socketServer = require('./socketServer');
 
-// const DB = (process.env.NODE_ENV === 'development' ? process.env.DATABASE_TEST : process.env.DATABASE).replace(
-//   '<PASSWORD>',
-//   (process.env.NODE_ENV === 'development' ? process.env.DATABASE_PASSWORD_TEST : process.env.DATABASE_PASSWORD)
-// );
-// useCreateIndex: true,
-// useFindAndModify: false,
-
 mongoose.set('strictQuery', false);
 
 const DB = process.env.MONGO_URI;
 
-console.log('DB', DB);
+// console.log('DB', DB);
 
 mongoose
   .connect(DB, {
