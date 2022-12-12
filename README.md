@@ -11,21 +11,21 @@ From / By https://github.com/Creatoon/Jar-web-app
 ## Environment variables:
 
 ```java
-NODE_ENV=development
-PORT=9876
+MONGO_URI="mongodb+srv://userid:password@cluster0.host.mongodb.net/jar-chat-app-aws-s3-mongo-multer?retryWrites=true&w=majority"
 
-DATABASE_TEST=mongodb+srv://rajAryan:<PASSWORD>@test.p7bqg.mongodb.net/chatAppTest?retryWrites=true&w=majority
-DATABASE_PASSWORD_TEST=3hsqz5T0aBws4G4b
+APP_AWS_S3_BUCKET="jar-chat-app-aws-s3-mongo-multer"
+APP_AWS_ACCESS_KEY_ID=""
+APP_AWS_SECRET_ACCESS_KEY=""
+APP_AWS_REGION="us-east-1"
 
-JWT_SECRET= Enter Any Secret Here
+JWT_SECRET="AnotherSecret"
 JWT_EXPIRES_IN=90d
 JWT_COOKIE_EXPIRES_IN=90
 
-SECURE_ROOM_PASSWORD= Enter Any Secure Room Password
+SECURE_ROOM_PASSWORD="SecretHere"
 
-SecretAccessKey=Enter Your S3 Bucket Secret Access Key
-AccessKeyID= Enter Your S3 Bucket Secret Access Key
-AWSBucketName=Enter Your S3 Bucket Name
+NODE_ENV=development
+PORT=3000
 ```
 
 ## GitHub

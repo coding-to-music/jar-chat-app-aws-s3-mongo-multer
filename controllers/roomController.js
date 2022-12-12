@@ -9,27 +9,27 @@ const Room = require('./../models/roomModel');
 const factory = require('./handlerFactory');
 
 aws.config.update({
-  secretAccessKey: process.env.SecretAccessKey,
-  accessKeyId: process.env.AccessKeyID,
-  region: 'us-east-2'
+  secretAccessKey: process.env.APP_AWS_SECRET_ACCESS_KEY,
+  accessKeyId: process.env.APP_AWS_ACCESS_KEY_ID,
+  region: process.env.APP_AWS_REGION,
 });
 
 const s3 = new aws.S3();
 
 const upload = multer({
   storage: sharpMulters3({
-    key: function(req, file, cb) {
+    key: function (req, file, cb) {
       cb(null, `room-${req.user.id}-${Date.now()}.jpeg`);
     },
     s3: s3,
-    Bucket: process.env.AWSBucketName,
+    Bucket: process.env.APP_AWS_S3_BUCKET,
     acl: 'public-read',
     resize: { width: 150, height: 150 },
     max: true,
-    metadata: function(req, file, cb) {
+    metadata: function (req, file, cb) {
       cb(null, { fieldName: 'testing' });
-    }
-  })
+    },
+  }),
 });
 
 exports.uploadRoomPhoto = upload.single('roomImage');
@@ -37,7 +37,7 @@ exports.uploadRoomPhoto = upload.single('roomImage');
 exports.getAllRooms = factory.getAll(Room);
 exports.getOneRoomById = factory.getOne(Room, {
   path: 'members',
-  select: '-__v  -createdAt -password'
+  select: '-__v  -createdAt -password',
 });
 exports.getRoomsByName = factory.getAllByNames(Room);
 exports.createRoom = factory.createOne(Room);
@@ -47,7 +47,13 @@ exports.getRoomByIdForRendering = async (req, res, next) => {
   let rightParam;
 
   if (req.originalUrl.startsWith('/room')) {
-    if ((req.params.id.startsWith('5') || req.params.id.startsWith('6') || req.params.id.startsWith('7') || req.params.id.startsWith('8')) && req.params.id.length === 24) {
+    if (
+      (req.params.id.startsWith('5') ||
+        req.params.id.startsWith('6') ||
+        req.params.id.startsWith('7') ||
+        req.params.id.startsWith('8')) &&
+      req.params.id.length === 24
+    ) {
       rightParam = req.params.id;
     } else {
       return next(new AppError('No route found with this room name', 400));
@@ -60,10 +66,10 @@ exports.getRoomByIdForRendering = async (req, res, next) => {
     .select('+password')
     .populate({
       path: 'members',
-      select: '-__v  -createdAt -password'
+      select: '-__v  -createdAt -password',
     })
     .populate({
-      path: 'allChats'
+      path: 'allChats',
     });
 
   if (!query) {
