@@ -10,7 +10,8 @@
     "debug": "ndb server.js",
     "deploy": "git add . && git commit -m Build && git push",
     "watch:js": "parcel watch ./public/js/development/index.js --out-dir ./public/js/production --out-file bundle.js",
-    "build:js": "parcel build ./public/js/development/index.js --out-dir ./public/js/production --out-file bundle.js"
+    "build:js": "parcel build ./public/js/development/index.js --out-dir ./public/js/production --out-file bundle.js",
+    "build": "parcel build ./public/js/development/index.js --out-dir ./public/js/production --out-file bundle.js"
   },
   "author": "Raj Aryan",
   "license": "ISC",
