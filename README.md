@@ -85,6 +85,15 @@ Checking /mnt/volume_nyc1_01/jar-chat-app-aws-s3-mongo-multer/package.json
 Run ncu -u to upgrade package.json
 ```
 
+## Attempting to upload an image to the AWS S3 bucket
+
+```
+PATCH /api/v1/users/updateMe 403 234.172 ms - -
+GET /bundle.js.map 404 41.971 ms - 1017
+
+Showing Access Denied as an error message
+```
+
 <div align="center">
     <a href="https://github.com/Creatoon/Jaar-Chat-WebApp">
         <img width="200" height="200" src="https://i.ibb.co/jzR1d33/github-logo.jpg">

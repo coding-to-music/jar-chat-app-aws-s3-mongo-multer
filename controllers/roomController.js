@@ -16,6 +16,10 @@ aws.config.update({
 
 const s3 = new aws.S3();
 
+// acl: 'public-read',
+
+console.log('roomControler about to upload to S3');
+
 const upload = multer({
   storage: sharpMulters3({
     key: function (req, file, cb) {
@@ -23,7 +27,6 @@ const upload = multer({
     },
     s3: s3,
     Bucket: process.env.APP_AWS_S3_BUCKET,
-    acl: 'public-read',
     resize: { width: 150, height: 150 },
     max: true,
     metadata: function (req, file, cb) {

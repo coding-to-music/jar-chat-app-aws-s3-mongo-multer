@@ -14,7 +14,7 @@ aws.config.update({
 
 const s3 = new aws.S3();
 
-// acl: 'public-read',
+console.log('userControler here...');
 
 const upload = multer({
   storage: sharpMulters3({
@@ -25,6 +25,7 @@ const upload = multer({
     Bucket: process.env.APP_AWS_S3_BUCKET,
     resize: { width: 400, height: 400 },
     max: true,
+    acl: 'public-read',
     metadata: function (req, file, cb) {
       cb(null, { fieldName: 'userImage' });
     },
@@ -57,6 +58,9 @@ exports.updateMe = catchAsync(async (req, res, next) => {
   // 2) checking and filtering out the unwanyted details like "ROLES"
   if (req.file) {
     req.body.photo = req.file.Location;
+
+    console.log('userControler req.file ', req.file);
+    console.log('userControler req.file.Location ', req.file.Location);
   }
 
   // 3) updating the user
